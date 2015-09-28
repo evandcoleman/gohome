@@ -22,3 +22,11 @@ _testmain.go
 *.exe
 *.test
 *.prof
+.DS_Store
+
+# HomeControl files
+*.privateKey
+*.publicKey
+*.configuration
+*.state
+uuid

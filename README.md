@@ -21,7 +21,7 @@
         # Install dependencies
         $ go get
 
-4. Build and install the `go home` binary
+4. Build and install the `gohome` binary
 
         $ go install
         

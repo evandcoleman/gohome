@@ -21,42 +21,42 @@ type Device struct {
 var bulbs = []Device{Device{
 	Name:      "Bed Lamp",
 	HouseCode: "C",
-	DeivceID:  10,
+	DeviceID:  10,
 	Dimmable:  true,
 }, Device{
 	Name:      "Corner Lamp",
 	HouseCode: "C",
-	DeivceID:  8,
+	DeviceID:  8,
 	Dimmable:  true,
 }, Device{
 	Name:      "Couch Lights",
 	HouseCode: "C",
-	DeivceID:  6,
+	DeviceID:  6,
 	Dimmable:  true,
 }, Device{
 	Name:      "Desk Lights",
 	HouseCode: "C",
-	DeivceID:  2,
+	DeviceID:  2,
 	Dimmable:  true,
 }, Device{
 	Name:      "Dining Room",
 	HouseCode: "C",
-	DeivceID:  4,
+	DeviceID:  4,
 	Dimmable:  true,
 }, Device{
 	Name:      "Fireplace Lights",
 	HouseCode: "C",
-	DeivceID:  1,
+	DeviceID:  1,
 	Dimmable:  false,
 }, Device{
 	Name:      "Lava Lamps",
 	HouseCode: "E",
-	DeivceID:  1,
+	DeviceID:  1,
 	Dimmable:  false,
 }, Device{
 	Name:      "TV Lights",
 	HouseCode: "C",
-	DeivceID:  7,
+	DeviceID:  7,
 	Dimmable:  true,
 }}
 

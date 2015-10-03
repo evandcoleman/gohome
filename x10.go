@@ -61,42 +61,49 @@ var bulbs = []Device{Device{
 }}
 
 func InstallX10Devices() {
+	lightBulbs := []interface{}{}
+
 	for _, b := range bulbs {
-		go func(b Device) {
-			log.Printf("Installing X10 device \"%v\"...\n", b.Name)
+		log.Printf("Installing X10 device \"%v\"...\n", b.Name)
 
-			info := model.Info{
-				Name:         b.Name,
-				Manufacturer: "X10",
+		info := model.Info{
+			Name:         b.Name,
+			Manufacturer: "X10",
+		}
+
+		light := accessory.NewLightBulb(info)
+		light.OnStateChanged(func(on bool) {
+			var action string
+			if on {
+				action = "on"
+			} else {
+				action = "off"
+			}
+			var method string
+			if b.Dimmable {
+				method = "pl"
+			} else {
+				method = "rf"
 			}
 
-			light := accessory.NewLightBulb(info)
-			light.OnStateChanged(func(on bool) {
-				var action string
-				if on {
-					action = "on"
-				} else {
-					action = "off"
-				}
-				var method string
-				if b.Dimmable {
-					method = "pl"
-				} else {
-					method = "rf"
-				}
+			cmd := fmt.Sprintf("%s %s%i %s", method, b.HouseCode, b.DeviceID, action)
+			writeCommand(cmd)
+		})
 
-				cmd := fmt.Sprintf("%s %s%i %s", method, b.HouseCode, b.DeviceID, action)
-				writeCommand(cmd)
-			})
-
-			t, err := hap.NewIPTransport("10000000", light.Accessory)
-			if err != nil {
-				log.Fatal(err)
-			}
-
-			t.Start()
-		}(b)
+		lightBulbs = append(lightBulbs, light.Accessory)
 	}
+
+	accessories := make([]*accessory.Accessory, len(lightBulbs))
+	for i, bulb := range lightBulbs {
+		accessories[i] = bulb.(*accessory.Accessory)
+	}
+
+	t, err := hap.NewIPTransport("10000000", accessories[0], accessories[1:]...)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	t.Start()
 }
 
 func writeCommand(cmd string) {

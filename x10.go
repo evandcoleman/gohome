@@ -65,20 +65,20 @@ func InstallX10Devices() {
 		go func(b Device) {
 			log.Printf("Installing X10 device \"%v\"...\n", b.Name)
 
-			info = model.Info{
+			info := model.Info{
 				Name:         b.Name,
 				Manufacturer: "X10",
 			}
 
 			light := accessory.NewLightBulb(info)
 			light.OnStateChanged(func(on bool) {
-				var string action
+				var action string
 				if on {
 					action = "on"
 				} else {
 					action = "off"
 				}
-				var string method
+				var method string
 				if b.Dimmable {
 					method = "pl"
 				} else {

@@ -108,6 +108,7 @@ func InstallX10Devices() {
 
 func writeCommand(cmd string) {
 	// TODO: Queue commands and execute serially with a delay
+	log.Printf("Writing command \"%s\"", cmd)
 	conn, err := net.Dial("tcp", "localhost:1099")
 	if err != nil {
 		log.Println(err)

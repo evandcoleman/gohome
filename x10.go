@@ -86,7 +86,7 @@ func InstallX10Devices() {
 				method = "rf"
 			}
 
-			cmd := fmt.Sprintf("%s %s%i %s", method, b.HouseCode, b.DeviceID, action)
+			cmd := fmt.Sprintf("%s %s%v %s", method, b.HouseCode, b.DeviceID, action)
 			writeCommand(cmd)
 		})
 

@@ -108,7 +108,7 @@ func writeCommand(cmd string) {
 	defer conn.Close()
 
 	writer := bufio.NewWriter(conn)
-	_, err := write.WriteString(cmd)
+	_, err = writer.WriteString(cmd)
 	if err != nil {
 		log.Println(err)
 	}

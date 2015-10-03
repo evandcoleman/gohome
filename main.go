@@ -11,5 +11,5 @@ func main() {
 	m.Get("/", func() string {
 		return "Hello world!"
 	})
-	m.Run()
+	m.RunOnAddr(":5591")
 }

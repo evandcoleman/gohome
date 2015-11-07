@@ -1,0 +1,11 @@
+[{
+  "name": "Couch Lights",
+  "house_code": "C",
+  "device_id": 6,
+  "dimmable": true
+},{
+  "name": "Lava Lamp",
+  "house_code": "E",
+  "device_id": 1,
+  "dimmable": false
+}]

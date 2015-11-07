@@ -1,0 +1,5 @@
+[{
+  "name": "LED Strip",
+  "access_token": "<particle.io access token>",
+  "device_id": "<core device id>"
+}]

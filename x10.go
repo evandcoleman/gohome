@@ -89,6 +89,13 @@ func X10Devices() []*accessory.Accessory {
 			cmd := fmt.Sprintf("%s %s%v %s", method, device.HouseCode, device.DeviceID, action)
 			writeCommand(cmd)
 		})
+		light.OnBrightnessChanged(func(val int) {
+			if device.Dimmable {
+				dimVal := int((float64(val) / 100) * 70)
+				cmd := fmt.Sprintf("pl %s%v xdim %v", device.HouseCode, device.DeviceID, dimVal)
+				writeCommand(cmd)
+			}
+		})
 
 		lightBulbs = append(lightBulbs, light.Accessory)
 	}

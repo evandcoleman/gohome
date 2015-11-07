@@ -16,6 +16,7 @@ type Device struct {
 	Dimmable  bool
 }
 
+// TODO: Read this from a config file
 var bulbs = []Device{Device{
 	Name:      "Bed Lamp",
 	HouseCode: "C",

@@ -6,7 +6,6 @@ import (
 	"log"
 	"net"
 
-	"github.com/brutella/hc/hap"
 	"github.com/brutella/hc/model"
 	"github.com/brutella/hc/model/accessory"
 )
@@ -60,7 +59,7 @@ var bulbs = []Device{Device{
 	Dimmable:  true,
 }}
 
-func InstallX10Devices() {
+func X10Devices() []*accessory.Accessory {
 	lightBulbs := []interface{}{}
 
 	for _, b := range bulbs {
@@ -98,12 +97,7 @@ func InstallX10Devices() {
 		accessories[i] = bulb.(*accessory.Accessory)
 	}
 
-	t, err := hap.NewIPTransport("10000000", accessories[0], accessories[1:]...)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	t.Start()
+	return accessories
 }
 
 func writeCommand(cmd string) {

@@ -4,6 +4,8 @@ import (
 	"log"
 
 	"github.com/brutella/hc/hap"
+	"github.com/brutella/hc/model"
+	"github.com/brutella/hc/model/accessory"
 	"github.com/go-martini/martini"
 )
 
@@ -13,7 +15,11 @@ func main() {
 
 	accessories := x10Accessories
 
-	t, err := hap.NewIPTransport("10000000", accessories[0], accessories[1:]...)
+	bridge := accessory.NewLightBulb(model.Info{
+		Name:         "Bridge",
+		Manufacturer: "Evan",
+	})
+	t, err := hap.NewIPTransport("10000000", bridge.Accessory, accessories...)
 	if err != nil {
 		log.Fatal(err)
 	}

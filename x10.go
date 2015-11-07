@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net"
 
@@ -10,56 +12,23 @@ import (
 )
 
 type Device struct {
-	Name      string
-	HouseCode string
-	DeviceID  int
-	Dimmable  bool
+	Name      string `json:"name"`
+	HouseCode string `json:"house_code"`
+	DeviceID  int    `json:"device_id"`
+	Dimmable  bool   `json:"dimmable"`
 }
 
-// TODO: Read this from a config file
-var bulbs = []Device{Device{
-	Name:      "Bed Lamp",
-	HouseCode: "C",
-	DeviceID:  10,
-	Dimmable:  true,
-}, Device{
-	Name:      "Corner Lamp",
-	HouseCode: "C",
-	DeviceID:  8,
-	Dimmable:  true,
-}, Device{
-	Name:      "Couch Lights",
-	HouseCode: "C",
-	DeviceID:  6,
-	Dimmable:  true,
-}, Device{
-	Name:      "Desk Lights",
-	HouseCode: "C",
-	DeviceID:  2,
-	Dimmable:  true,
-}, Device{
-	Name:      "Dining Room",
-	HouseCode: "C",
-	DeviceID:  4,
-	Dimmable:  true,
-}, Device{
-	Name:      "Fireplace Lights",
-	HouseCode: "C",
-	DeviceID:  1,
-	Dimmable:  false,
-}, Device{
-	Name:      "Lava Lamps",
-	HouseCode: "E",
-	DeviceID:  1,
-	Dimmable:  false,
-}, Device{
-	Name:      "TV Lights",
-	HouseCode: "C",
-	DeviceID:  7,
-	Dimmable:  true,
-}}
-
 func X10Devices() []*accessory.Accessory {
+	file, err := ioutil.ReadFile("./config/x10.json")
+	if err != nil {
+		log.Fatalln("Error opening X10 config file", err.Error())
+	}
+
+	var bulbs []Device
+	if err = json.Unmarshal(file, &bulbs); err != nil {
+		log.Fatalln("Error parsing X10 config file", err.Error())
+	}
+
 	lightBulbs := []interface{}{}
 
 	for _, b := range bulbs {

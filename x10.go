@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"log"
 	"net"
@@ -110,8 +109,7 @@ func writeCommand(cmd string) {
 	}
 	defer conn.Close()
 
-	writer := bufio.NewWriter(conn)
-	_, err = writer.WriteString(cmd)
+	_, err = conn.Write([]byte(cmd + "\n"))
 	if err != nil {
 		log.Println(err)
 	}

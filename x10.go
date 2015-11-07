@@ -63,7 +63,7 @@ func X10Devices() []*accessory.Accessory {
 	lightBulbs := []interface{}{}
 
 	for _, b := range bulbs {
-		log.Printf("Installing X10 device \"%v\"...\n", b.Name)
+		log.Printf("Creating X10 accessory \"%v\"...\n", b.Name)
 
 		info := model.Info{
 			Name:         b.Name,

@@ -12,8 +12,9 @@ import (
 func main() {
 	// Install HAP devices
 	x10Accessories := X10Devices()
+	particleAccessories := ParticleDevices()
 
-	accessories := x10Accessories
+	accessories := append(x10Accessories, particleAccessories...)
 
 	bridge := accessory.NewLightBulb(model.Info{
 		Name:         "Bridge",

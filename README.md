@@ -21,15 +21,21 @@
         # Install dependencies
         $ go get
 
-4. Build and install the `gohome` binary
+4. Copy the `config-sample` directory to `config` and edit the files according to your setup.
+
+5. Build and install the `gohome` binary
 
         $ go install
         
-5. Run it!
+6. Run it!
 
         $ gohome
         
-6. Pair your devices with a HomeKit app
+7. Pair your devices with a HomeKit app
+
+## TODO
+
+* Queue X10 commands and execute serially with a delay because X10 can't always handle multiple commands in quick succession.
 
 ## License
 

@@ -63,10 +63,11 @@ func X10Devices() []*accessory.Accessory {
 	lightBulbs := []interface{}{}
 
 	for _, b := range bulbs {
-		log.Printf("Creating X10 accessory \"%v\"...\n", b.Name)
+		var device Device = b
+		log.Printf("Creating X10 accessory \"%v\"...\n", device.Name)
 
 		info := model.Info{
-			Name:         b.Name,
+			Name:         device.Name,
 			Manufacturer: "X10",
 		}
 
@@ -79,13 +80,13 @@ func X10Devices() []*accessory.Accessory {
 				action = "off"
 			}
 			var method string
-			if b.Dimmable {
+			if device.Dimmable {
 				method = "pl"
 			} else {
 				method = "rf"
 			}
 
-			cmd := fmt.Sprintf("%s %s%v %s", method, b.HouseCode, b.DeviceID, action)
+			cmd := fmt.Sprintf("%s %s%v %s", method, device.HouseCode, device.DeviceID, action)
 			writeCommand(cmd)
 		})
 

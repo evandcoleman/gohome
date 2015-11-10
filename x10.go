@@ -29,7 +29,7 @@ func X10Devices() []*accessory.Accessory {
 		log.Fatalln("Error parsing X10 config file", err.Error())
 	}
 
-	lightBulbs := []interface{}{}
+	lightBulbs := []*accessory.Accessory{}
 
 	for _, b := range bulbs {
 		var device Device = b
@@ -69,12 +69,7 @@ func X10Devices() []*accessory.Accessory {
 		lightBulbs = append(lightBulbs, light.Accessory)
 	}
 
-	accessories := make([]*accessory.Accessory, len(lightBulbs))
-	for i, bulb := range lightBulbs {
-		accessories[i] = bulb.(*accessory.Accessory)
-	}
-
-	return accessories
+	return lightBulbs
 }
 
 func writeCommand(cmd string) {

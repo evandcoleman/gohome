@@ -45,7 +45,7 @@ func ParticleDevices() []*accessory.Accessory {
 		light := accessory.NewLightBulb(info)
 		light.OnStateChanged(func(on bool) {
 			if on {
-				callParticleFunction(device, "animate", "Rainbow,100,255")
+				callParticleFunction(device, "set_animation", "Rainbow,100,255")
 			} else {
 				callParticleFunction(device, "set_color", "0,0,0")
 			}

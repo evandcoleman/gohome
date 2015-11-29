@@ -45,22 +45,22 @@ func ParticleDevices() []*accessory.Accessory {
 		light := accessory.NewLightBulb(info)
 		light.OnStateChanged(func(on bool) {
 			if on {
-				callParticleFunction(device, "animate", "1,100,255")
+				callParticleFunction(device, "animate", "Rainbow,100,255")
 			} else {
-				callParticleFunction(device, "setColor", "0,0,0")
+				callParticleFunction(device, "set_color", "0,0,0")
 			}
 		})
 		light.OnBrightnessChanged(func(val int) {
 			cl := colorful.Hsv(light.GetHue(), light.GetSaturation()/100, float64(light.GetBrightness())/100)
-			callParticleFunction(device, "setColor", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
+			callParticleFunction(device, "set_color", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
 		})
 		light.OnHueChanged(func(val float64) {
 			cl := colorful.Hsv(light.GetHue(), light.GetSaturation()/100, float64(light.GetBrightness())/100)
-			callParticleFunction(device, "setColor", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
+			callParticleFunction(device, "set_color", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
 		})
 		light.OnSaturationChanged(func(val float64) {
 			cl := colorful.Hsv(light.GetHue(), light.GetSaturation()/100, float64(light.GetBrightness())/100)
-			callParticleFunction(device, "setColor", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
+			callParticleFunction(device, "set_color", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
 		})
 
 		lightBulbs = append(lightBulbs, light.Accessory)

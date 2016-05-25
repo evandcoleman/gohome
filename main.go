@@ -3,9 +3,8 @@ package main
 import (
 	"log"
 
+	"github.com/brutella/hc/accessory"
 	"github.com/brutella/hc/hap"
-	"github.com/brutella/hc/model"
-	"github.com/brutella/hc/model/accessory"
 	"github.com/go-martini/martini"
 )
 

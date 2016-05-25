@@ -6,8 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/brutella/hc/model"
-	"github.com/brutella/hc/model/accessory"
+	"github.com/brutella/hc/accessory"
 	"github.com/lucasb-eyer/go-colorful"
 	"github.com/parnurzeal/gorequest"
 )

@@ -7,8 +7,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/brutella/hc/model"
-	"github.com/brutella/hc/model/accessory"
+	"github.com/brutella/hc/accessory"
 )
 
 type Device struct {

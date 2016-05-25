@@ -31,3 +31,5 @@ _testmain.go
 *.state
 uuid
 config
+Bridge
+gohome

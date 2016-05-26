@@ -36,29 +36,29 @@ func ParticleDevices() []*accessory.Accessory {
 		var device Core = b
 		log.Printf("Creating Particle accessory \"%v\"...\n", device.Name)
 
-		info := model.Info{
+		info := accessory.Info{
 			Name:         device.Name,
 			Manufacturer: "Particle",
 		}
 
-		light := accessory.NewLightBulb(info)
-		light.OnStateChanged(func(on bool) {
+		light := accessory.NewLightbulb(info)
+		light.Lightbulb.On.OnValueRemoteUpdate(func(on bool) {
 			if on {
 				callParticleFunction(device, "animate", "Rainbow,100,255")
 			} else {
 				callParticleFunction(device, "set_color", "0,0,0")
 			}
 		})
-		light.OnBrightnessChanged(func(val int) {
-			cl := colorful.Hsv(light.GetHue(), light.GetSaturation()/100, float64(light.GetBrightness())/100)
+		light.Lightbulb.Brightness.OnValueRemoteUpdate(func(val int) {
+			cl := colorful.Hsv(light.Lightbulb.Hue.GetValue(), light.Lightbulb.Saturation.GetValue()/100, float64(light.Lightbulb.Brightness.GetValue()/100))
 			callParticleFunction(device, "set_color", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
 		})
-		light.OnHueChanged(func(val float64) {
-			cl := colorful.Hsv(light.GetHue(), light.GetSaturation()/100, float64(light.GetBrightness())/100)
+		light.Lightbulb.Hue.OnValueRemoteUpdate(func(val float64) {
+			cl := colorful.Hsv(light.Lightbulb.Hue.GetValue(), light.Lightbulb.Saturation.GetValue()/100, float64(light.Lightbulb.Brightness.GetValue()/100))
 			callParticleFunction(device, "set_color", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
 		})
-		light.OnSaturationChanged(func(val float64) {
-			cl := colorful.Hsv(light.GetHue(), light.GetSaturation()/100, float64(light.GetBrightness())/100)
+		light.Lightbulb.Saturation.OnValueRemoteUpdate(func(val float64) {
+			cl := colorful.Hsv(light.Lightbulb.Hue.GetValue(), light.Lightbulb.Saturation.GetValue()/100, float64(light.Lightbulb.Brightness.GetValue()/100))
 			callParticleFunction(device, "set_color", fmt.Sprintf("%v,%v,%v", int(cl.R*255), int(cl.G*255), int(cl.B*255)))
 		})
 

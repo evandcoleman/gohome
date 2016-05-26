@@ -34,13 +34,13 @@ func X10Devices() []*accessory.Accessory {
 		var device Device = b
 		log.Printf("Creating X10 accessory \"%v\"...\n", device.Name)
 
-		info := model.Info{
+		info := accessory.Info{
 			Name:         device.Name,
 			Manufacturer: "X10",
 		}
 
-		light := accessory.NewLightBulb(info)
-		light.OnStateChanged(func(on bool) {
+		light := accessory.NewLightbulb(info)
+		light.Lightbulb.On.OnValueRemoteUpdate(func(on bool) {
 			var action string
 			if on {
 				action = "on"
@@ -57,7 +57,7 @@ func X10Devices() []*accessory.Accessory {
 			cmd := fmt.Sprintf("%s %s%v %s", method, device.HouseCode, device.DeviceID, action)
 			writeCommand(cmd)
 		})
-		light.OnBrightnessChanged(func(val int) {
+		light.Lightbulb.Brightness.OnValueRemoteUpdate(func(val int) {
 			if device.Dimmable {
 				dimVal := int((float64(val) / 100) * 70)
 				cmd := fmt.Sprintf("pl %s%v xdim %v", device.HouseCode, device.DeviceID, dimVal)

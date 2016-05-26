@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
+	"github.com/brutella/hc"
 	"github.com/brutella/hc/accessory"
-	"github.com/brutella/hc/hap"
 	"github.com/go-martini/martini"
 )
 
@@ -15,11 +15,12 @@ func main() {
 
 	accessories := append(x10Accessories, particleAccessories...)
 
-	bridge := accessory.NewLightBulb(model.Info{
+	bridge := accessory.NewLightbulb(accessory.Info{
 		Name:         "Bridge",
 		Manufacturer: "Evan",
 	})
-	t, err := hap.NewIPTransport("10000000", bridge.Accessory, accessories...)
+	config := hc.Config{Pin: "10000000"}
+	t, err := hc.NewIPTransport(config, bridge.Accessory, accessories...)
 	if err != nil {
 		log.Fatal(err)
 	}

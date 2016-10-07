@@ -1,22 +1,22 @@
 {
 	"ImportPath": "github.com/edc1591/gohome",
-	"GoVersion": "go1.6",
+	"GoVersion": "go1.7",
 	"GodepVersion": "v74",
 	"Deps": [
 		{
 			"ImportPath": "github.com/aead/chacha20",
-			"Comment": "v1.0",
-			"Rev": "f49bc14c1ae769764134dff6b84dfad8c3f7cd06"
+			"Comment": "v1.2",
+			"Rev": "ba19b6a364967b510e6cc40a0068138621774b80"
 		},
 		{
 			"ImportPath": "github.com/aead/chacha20/chacha",
-			"Comment": "v1.0",
-			"Rev": "f49bc14c1ae769764134dff6b84dfad8c3f7cd06"
+			"Comment": "v1.2",
+			"Rev": "ba19b6a364967b510e6cc40a0068138621774b80"
 		},
 		{
 			"ImportPath": "github.com/aead/poly1305",
-			"Comment": "v1.0",
-			"Rev": "6145bf188f408e57e4a256eab2e0989eb8b92f53"
+			"Comment": "v1.0.3",
+			"Rev": "04f9a0c0453636d146accc4d0fb625809497428e"
 		},
 		{
 			"ImportPath": "github.com/agl/ed25519",
@@ -28,88 +28,88 @@
 		},
 		{
 			"ImportPath": "github.com/brutella/hc",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/accessory",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/characteristic",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/crypto",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/crypto/chacha20poly1305",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/crypto/curve25519",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/crypto/hkdf",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/db",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/event",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/hap",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/hap/controller",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/hap/data",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/hap/endpoint",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/hap/http",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/hap/pair",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/service",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/hc/util",
-			"Comment": "v0.1.0-36-g6faf611",
-			"Rev": "6faf611963218f37a0872fbb3806ed45a6aa6e6a"
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		},
 		{
 			"ImportPath": "github.com/brutella/log",
@@ -135,7 +135,7 @@
 		},
 		{
 			"ImportPath": "github.com/miekg/dns",
-			"Rev": "db96a2b759cdef4f11a34506a42eb8d1290c598e"
+			"Rev": "fc4e1e2843d86c346d7203160cfdbf14fa654a9b"
 		},
 		{
 			"ImportPath": "github.com/oleksandr/bonjour",
@@ -181,6 +181,36 @@
 		{
 			"ImportPath": "golang.org/x/net/publicsuffix",
 			"Rev": "1358eff22f0dd0c54fc521042cc607f6ff4b531a"
+		},
+		{
+			"ImportPath": "github.com/brutella/hc/log",
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
+		},
+		{
+			"ImportPath": "github.com/brutella/hc/vendor/github.com/gosexy/to",
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
+		},
+		{
+			"ImportPath": "github.com/brutella/hc/vendor/github.com/oleksandr/bonjour",
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
+		},
+		{
+			"ImportPath": "github.com/brutella/hc/vendor/github.com/agl/ed25519",
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
+		},
+		{
+			"ImportPath": "github.com/brutella/hc/vendor/github.com/tadglines/go-pkgs/crypto/srp",
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
+		},
+		{
+			"ImportPath": "github.com/brutella/hc/vendor/github.com/agl/ed25519/edwards25519",
+			"Comment": "v0.1.0-42-g2da3b57",
+			"Rev": "2da3b57fd12c4cd779caf77b3556d44be9548325"
 		}
 	]
 }
